@@ -75,9 +75,9 @@
 The provided TypeScript code introduces the concept of type assertions, covering various scenarios such as type narrowing, double casting, and their applications in dealing with the DOM. It also highlights the differences between `unknown` and `any` types, and the caution required when using non-null assertions.
 
 ### challenge - 
-![Challenge](image.png)
+![Challenge](./images/04task.png)
 First variation - 
-![Sol1](image-1.png)
+![Sol1](./images/04tasksSol.png)
 Actual optimal way using type assertions - 
 ```ts
 const year = document.getElementById('year') as HTMLSpanElement;
