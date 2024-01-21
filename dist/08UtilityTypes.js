@@ -38,8 +38,7 @@ const courseDetails = {
     // ds : "r" Error:Type '"r"' is not assignable to type 'availableCourse'.
     ds: "python",
 };
-//Record by default is required to make it optional use
-// partial type
+//Record by default is required .to make it optional use partial type
 const courseDetails1 = {
     dev: "js",
     // ds : "r" Error:Type '"r"' is not assignable to type 'availableCourse'.

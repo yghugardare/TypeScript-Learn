@@ -218,13 +218,14 @@ So, in short:
 
   ```typescript
   // Tuple
-  let tuple: [number, string] = [1, "hello", false]; // Allowed
+  let tuple: [number, string] = [1, "hello", false];
+   let array: (number | string)[] = tuple; // Allowed
   ```
 
 - **Incorrect (Tuple to Array):**
   ```typescript
   // Array
-  let array: (number | string)[] = tuple; // Not allowed
+   let tuple: [number, string] = [1, "hello", false];// Not allowed
   ```
 
 Attempting to assign the tuple to an array results in a TypeScript error, as the tuple's fixed size and specific types cannot be guaranteed in the array.
