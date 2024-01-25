@@ -39,10 +39,10 @@ const enum ACTION_TYPE {
   DECREMENT,
   CHANGE_INP,
 }
-type ReducerAction =
-  | { type: ACTION_TYPE.INCREMENT }
-  | { type: ACTION_TYPE.DECREMENT }
-  | { type: ACTION_TYPE.CHANGE_INP; payload: string };
+type ReducerAction = {
+  type : ACTION_TYPE,
+  payload?:string
+}
 function reducer(state: stateType, action: ReducerAction): stateType {
   switch (action.type) {
     case ACTION_TYPE.INCREMENT:
@@ -50,7 +50,7 @@ function reducer(state: stateType, action: ReducerAction): stateType {
     case ACTION_TYPE.DECREMENT:
       return { ...state, count: state.count - 1 };
     case ACTION_TYPE.CHANGE_INP:
-      return { ...state, text: action.payload };
+      return { ...state, text: action.payload ?? ""};
     default:
       throw new Error();
   }
@@ -79,10 +79,17 @@ function App() {
         className="inp"
         type="text"
       />
+      
     </>
   );
 }
 
 export default App;
 
+
+```tsx
+type ReducerAction =
+  | { type: ACTION_TYPE.INCREMENT }
+  | { type: ACTION_TYPE.DECREMENT }
+  | { type: ACTION_TYPE.CHANGE_INP; payload: string };
 ```
